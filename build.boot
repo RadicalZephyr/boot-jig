@@ -3,7 +3,24 @@
 
 (require '[clojure.java.io :as io])
 
-(deftask change []
+(deftask change!
+  "Access and potentially change the current directory via fileset operations.
+
+  This task changes the environment, removing all currently set
+  source, resource and asset paths, and instead setting the current
+  directory as the sole entry in :source-paths.  This puts every file
+  in the current directory into the fileset, allowing relative paths
+  from the current directory to access them.
+
+  In order to actually change the fileset you still need to put the
+  `target` task at the end of your pipeline, but `change!` configures
+  it's options to \"do the right thing\" and write the fileset to the
+  current directory without cleaning.
+
+  Finally, since it's pretty rare to interact with source control
+  repositories as files directly, this task filters out common source
+  control files and directory names."
+  []
   (set-env! :source-paths (fn [_] #{})
             :resource-paths (fn [_] #{})
             :asset-paths (fn [_] #{}))
