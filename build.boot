@@ -2,7 +2,7 @@
 (def version "0.0.0-SNAPSHOT")
 
 (set-env!
- :resource-paths #{"resources"}
+ :resource-paths #{"src" "resources"}
  :dependencies (template
                 [[org.clojure/clojure ~(clojure-version) :scope "provided"]
                  [boot/core "2.1.0" :scope "provided"]
