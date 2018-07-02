@@ -7,3 +7,14 @@
      ~@before
      (cljs)
      ~@after)))
+
+(defn- merge-recur [default overrides]
+  (merge-with merge-recur default overrides))
+
+(defn cljs-development-task-template [current-options new-options]
+  (core/template
+   (deftask development []
+     (task-options!
+      ~@(mapcat identity
+                (merge-with merge-recur current-options new-options)))
+     identity)))
