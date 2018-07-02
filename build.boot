@@ -7,7 +7,8 @@
  :dependencies (template
                 [[org.clojure/clojure ~(clojure-version) :scope "provided"]
                  [boot/core "2.8.1" :scope "provided"]
-                 [metosin/bat-test "0.4.0" :scope "test"]]))
+                 [metosin/bat-test "0.4.0" :scope "test"]
+                 [zprint "0.4.9"]]))
 
 (require '[clojure.java.io :as io]
          '[metosin.bat-test :refer [bat-test]])
