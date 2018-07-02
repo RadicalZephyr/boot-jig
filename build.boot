@@ -5,7 +5,7 @@
  :resource-paths #{"src" "resources"}
  :dependencies (template
                 [[org.clojure/clojure ~(clojure-version) :scope "provided"]
-                 [boot/core "2.1.0" :scope "provided"]
+                 [boot/core "2.8.1" :scope "provided"]
                  [metosin/bat-test "0.4.0" :scope "test"]]))
 
 (require '[clojure.java.io :as io]
