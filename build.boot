@@ -10,8 +10,7 @@
                  [metosin/bat-test "0.4.0" :scope "test"]
                  [zprint "0.4.9"]]))
 
-(require '[clojure.java.io :as io]
-         '[metosin.bat-test :refer [bat-test]])
+(require '[metosin.bat-test :refer [bat-test]])
 
 (task-options! pom {:project     project
                     :version     version
